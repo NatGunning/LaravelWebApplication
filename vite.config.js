@@ -10,4 +10,12 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    server: {
+        cors:true,
+        hmr: {
+            host: "scaling-space-enigma-v455g54grgjcwrrg-5173.app.github.dev",
+            clientPort: 443,
+            protocol: 'wws',
+        },
+    }
 });

@@ -1,59 +1,38 @@
-# Laravel Starter
-This repository can be used as a starting point for developing a Laravel application in Codespaces.  
+# Laravel Web Application - Virtual Art Gallery
 
-## Install dependencies
-The repository already has Laravel installed. You just need to complete setting up and configuring Laravel before you can start working on your project.
--   In your Codespace, in the terminal enter:
-```
-composer update
-```
--   This will install all the libraries needed for Laravel to work.
+## Introduction
+A PHP Assignment from the fourth year of University as a part of my Advanced Web Programming module. This is a virtual art gallery where users can view paintings & artists and edit them.
 
-## Configure the application using a .env file
--   Create a new file name _.env_ in the root of the codespace.
--   Copy the entire contents of _example.env_ into _.env_
--   In _.env_
-    -   Change the `APP_URL` to be the following e.g.
-    ```
-    APP_URL=https://name-of-codespace-8000.app.github.dev/
-    ```
-    -   You can get the 'name-of-codespace' from the URL in the browser. It will be two words and a random series of letters and numbers e.g. _special-potato-ppvp74vgxfrg6r_. So for this example I'd enter an APP_URL of:-
-    ```
-    APP_URL=https://special-potato-ppvp74vgxfrg6r-8000.app.github.dev/
-    ```
-    -   Change the database settings to the following:
-    ```
-    DB_CONNECTION=mysql
-    DB_HOST=db
-    DB_PORT=3306
-    DB_DATABASE=cht2520
-    DB_USERNAME=root
-    DB_PASSWORD=secret
-    ```
--   Save your changes to `.env`
--   In the terminal enter the following:
+Technical Features & Languages Included:
+- MVC Framework
+- Laravel PHP
+- Tailwind CSS
+- Vite
+
+## Running the Web Application
+
+### Installation
+Tailwind can be installed using the Terminal. To install Tailwind, enter:
 
 ```
-php artisan key:generate
+npm install tailwindcss @tailwindcss/cli
 ```
 
-This will generate a key that is used to encode potentially sensitive data e.g. session data, cookies etc.
-
--   Then enter
+This should install a folder of libraries neccessary for Tailwind to run called *node_modules*, as well as a JSON file called *package.json* to track the project's dependencies. In order to scan the project for any outlying CSS, run the following command:
 
 ```
-php artisan migrate
+npx @tailwindcss/cli -i public/css/layout.css -o public/css/output.css --watch
 ```
 
-This will generate some basic database tables that Laravel needs to work.
+## How To Run
+In a new Terminal tab, enter:
 
-## Test the installation is successful
+``` npm run dev ```
 
-In the terminal enter
+Once this has run, switch to the Ports tab and locate port number 5173. Select the port, right click, and hover over 'Port Visibility'. Select the option 'Public', and in the table port 5173 should now have a Visiblity reading Public.
 
-```
-php artisan serve
-```
+Next switch back to the Terminal tab. On the right click the 'plus' icon to create a New terminal. In this new terminal, enter:
 
-You should be able to view your Laravel app on port 8000 where you will see the 'Let's get started' message.
+``` php artisan serve ```
 
+In the bottom right a pop-up should appear announcing that port 8000 is available to run. If not, navigate to the 8000 port and right click to open in the browser.
